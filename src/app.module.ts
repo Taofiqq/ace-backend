@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import databaseConfig from './config/database.config';
+import { HealthController } from './health.controller';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import databaseConfig from './config/database.config';
       }),
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
 export class AppModule implements OnModuleInit {
